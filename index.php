@@ -50,14 +50,14 @@ if (!$conn) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
         $mail->Host       = "smtp.gmail.com";
-        $mail->Username   = "jideadedejifirst@gmail.com";
+        $mail->Username   = "ojadianita@gmail.com";
         $mail->Password   = getenv('PASSWORD');
 
         $mail->IsHTML(true);
         $mail->AddAddress($receiver, "subscriber");
-        $mail->SetFrom("jideadedejifirst@gmail.com", "Hng landing page");
-        $mail->AddReplyTo("jideadedejifirst@gmail.com", "Hng landing page");
-        $mail->Subject = "Welcome Aboard!";
+        $mail->SetFrom("ojadianita@gmail.com", "Finderz landing page");
+        $mail->AddReplyTo("ojadianita@gmail.com", "Finderz landing page");
+        $mail->Subject = "Welcome Onboard!";
         $content = "<b>Thank you for subscribing</b>";
 
         $mail->MsgHTML($content);
@@ -65,7 +65,7 @@ if (!$conn) {
             echo "Error while sending Email.";
             // var_dump($mail);
         } else {
-            echo "Email sent successfully";
+            echo "Email was sent successfully";
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
