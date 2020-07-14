@@ -1,6 +1,4 @@
 <?php
-echo "testing";
-die()
 ​
 //READ!!!!!!!!!!!!!
 //https://pepipost.com/tutorials/send-an-email-via-gmail-smtp-server-using-php/
@@ -52,14 +50,14 @@ if (!$conn) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
         $mail->Host       = "smtp.gmail.com";
-        $mail->Username   = "ojadianita@gmail.com";
+        $mail->Username   = "jideadedejifirst@gmail.com";
         $mail->Password   = getenv('PASSWORD');
 ​
         $mail->IsHTML(true);
         $mail->AddAddress($receiver, "subscriber");
-        $mail->SetFrom("ojadianita@gmail.com", "Finderz landing page");
-        $mail->AddReplyTo("ojadianita@gmail.com", "Finderz landing page");
-        $mail->Subject = "Welcome Onboard!";
+        $mail->SetFrom("jideadedejifirst@gmail.com", "Hng landing page");
+        $mail->AddReplyTo("jideadedejifirst@gmail.com", "Hng landing page");
+        $mail->Subject = "Welcome Aboard!";
         $content = "<b>Thank you for subscribing</b>";
 ​
         $mail->MsgHTML($content);
@@ -67,7 +65,7 @@ if (!$conn) {
             echo "Error while sending Email.";
             // var_dump($mail);
         } else {
-            echo "Email was sent successfully";
+            echo "Email sent successfully";
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
