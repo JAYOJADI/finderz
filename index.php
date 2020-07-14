@@ -1,4 +1,6 @@
 <?php
+echo "testing";
+die()
 ​
 //READ!!!!!!!!!!!!!
 //https://pepipost.com/tutorials/send-an-email-via-gmail-smtp-server-using-php/
