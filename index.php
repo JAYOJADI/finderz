@@ -76,9 +76,8 @@ if (!$conn) {
         $mail->MsgHTML($content);
         if (!$mail->Send()) {
             echo "Error while sending Email.";
-            // var_dump($mail);
         } else {
-            echo "Email was sent successfully";
+            echo "success";
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
