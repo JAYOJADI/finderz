@@ -2,3 +2,4 @@ Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
+Header set Access-Control-Allow-Headers: "customKey1,customKey2, headers, Origin, X-Requested-With, Content-Type, Accept, Authorization"
