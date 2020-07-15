@@ -35,16 +35,6 @@ if (!$conn) {
         }
         exit();
     }
-    // $sql = "CREATE TABLE emails (
-    //     id INT AUTO_INCREMENT PRIMARY KEY,
-    //     email VARCHAR(100) NOT NULL)";
-
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "Table MyGuests created successfully";
-    // } else {
-    //     echo "Error creating table: " . $conn->error;
-    // }
-
 
     if (!isset($_POST["email"])) {
         die("no email");
