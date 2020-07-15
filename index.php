@@ -22,6 +22,19 @@ $conn = mysqli_connect("us-cdbr-east-02.cleardb.com", "b6d19c977650fd", "c1ede30
 if (!$conn) {
     echo 'Connection error: ' . mysqli_connect_error();
 } else {
+    if ($_SERVER['REQUEST_URI'] === "/emails") {
+        $sql = "SELECT * FROM emails";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            // var_dump($result);
+            while ($row = $result->fetch_assoc()) {
+                echo "id: " . $row["id"] . " - Name: " . $row["email"] . "<br>";
+            }
+        } else {
+            die("couldn't fetch emails");
+        }
+        exit();
+    }
     // $sql = "CREATE TABLE emails (
     //     id INT AUTO_INCREMENT PRIMARY KEY,
     //     email VARCHAR(100) NOT NULL)";
@@ -58,7 +71,7 @@ if (!$conn) {
         $mail->SetFrom("ojadianita@gmail.com", "Finderz landing page");
         $mail->AddReplyTo("ojadianita@gmail.com", "Finderz landing page");
         $mail->Subject = "Welcome Onboard!";
-        $content = "<b>Thank you for subscribing</b>";
+        $content = "<b>Thank you for subscribing.</b>";
 
         $mail->MsgHTML($content);
         if (!$mail->Send()) {
