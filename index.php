@@ -48,7 +48,7 @@ if (!$conn) {
         // echo "New record created successfully";
         //send email
         $mail->IsSMTP();
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->SMTPDebug = SMTP::false;
         $mail->SMTPAuth   = true;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
